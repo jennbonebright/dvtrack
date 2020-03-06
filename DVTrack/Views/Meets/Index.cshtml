@@ -1,0 +1,52 @@
+﻿@model IEnumerable<DVTrack.Models.Meet>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.YearId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeetTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeetDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationName)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.YearId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeetTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeetDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LocationName)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MeetId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MeetId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,96 @@
+﻿@model IEnumerable<DVTrack.Models.Mark>
+@functions{
+    public string GradeFormat(int grade)
+    {
+        var str = string.Empty;
+        switch (grade)
+        {
+            case 9:
+                str = "Fr";
+                break;
+            case 10:
+                str = "So";
+                break;
+            case 11:
+                str = "Jr";
+                break;
+            case 12:
+                str = "Sr";
+                break;
+        }
+        return str;
+    }
+}
+
+<div class="col-md-6">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Boys</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped table-hover table-condensed" id="">
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>Name</th>
+                        <th>Year</th>
+                        <th>Mark</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Where(g => g.Gender == "M").Take(10))
+                        {
+                            DateTime? markTime = item.Time;
+                            decimal? markMeters = item.Meters;
+                            string markInches = Math.Floor(Convert.ToDouble(item.Inches / 12)).ToString() + "' " + (item.Inches % 12).ToString() + "\"";
+                        <tr class='@(item.Year == DateTime.Today.Year ? "danger" : string.Empty)'>
+                            <td>@GradeFormat(item.Grade)</td>
+                            <td>@Html.ValueFor(model => item.AthleteName)</td>
+                            <td>@Html.ValueFor(model => item.Year)</td>
+                            <td>@(markTime != null ? markTime.Value.Minute > 0 ? markTime.Value.ToString("mm:ss.ff") : markTime.Value.ToString("ss.ff") :
+                                markMeters != null ? markMeters.ToString() :
+                                markInches != null ? markInches.ToString() : "")</td>
+                        </tr>
+                        }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Girls</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>Name</th>
+                        <th>Year</th>
+                        <th>Mark</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                        @foreach (var item in Model.Where(g => g.Gender == "F").Take(10))
+                        {
+                            DateTime? markTime = item.Time;
+                            decimal? markMeters = item.Meters;
+                            string markInches = Math.Floor(Convert.ToDouble(item.Inches / 12)).ToString() + "' " + (item.Inches % 12).ToString() + "\"";
+                        <tr class='@(item.Year == DateTime.Today.Year ? "danger" : string.Empty)'>
+                            <td>@GradeFormat(item.Grade)</td>
+                            <td>@Html.ValueFor(model => item.AthleteName)</td>
+                            <td>@Html.ValueFor(model => item.Year)</td>
+                            <td>@(markTime != null ? markTime.Value.Minute > 0 ? markTime.Value.ToString("mm:ss.ff") : markTime.Value.ToString("ss.ff") :
+                                markMeters != null ? markMeters.ToString() :
+                                markInches != null ? markInches.ToString() : "")</td>
+                        </tr>
+                        }
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

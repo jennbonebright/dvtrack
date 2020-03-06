@@ -1,0 +1,45 @@
+﻿@model IEnumerable<DVTrack.Models.Article>
+@{
+    ViewBag.Title = "News";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+            @ViewBag.Message
+        </h3>
+    </div>
+
+</div>
+<div>
+    <aside>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Thunder in the News</h3>
+            </div>
+            <ul class="list-group">
+                @foreach (var item in Model.Where(e => e.ExternalLink != null).OrderByDescending(d => d.PostedDate).Take(3))
+            {
+                    <a class="list-group-item" target="_blank" href="@item.ExternalLink">@item.Headline</a>
+                }
+            </ul>
+        </div>
+    </aside>
+    <article>
+        @foreach (var item in Model.Where(e => e.ExternalLink == null).OrderByDescending(d => d.PostedDate))
+        {
+            <div class="well">
+                <h3 class="text-info">@item.Headline</h3>
+                @Html.Raw(Server.HtmlDecode(item.ArticleBody))
+
+                <div class="float-right"><em><small>posted @item.PostedDate</small></em></div>
+            </div>
+        }
+
+        <ul class="pager">
+            <li class="previous "><a href="#">← Older</a></li>
+            <li class="next disabled"><a href="#">Newer →</a></li>
+        </ul>
+    </article>
+</div>

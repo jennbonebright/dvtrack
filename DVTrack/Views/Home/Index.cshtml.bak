@@ -1,0 +1,97 @@
+﻿@model IEnumerable<DVTrack.Models.Article>
+@{
+    ViewBag.Title = "Home of the Thunder";
+}
+
+
+
+<div class="row">
+    <div class="col-md-3">
+
+        <div class="panel panel-primary">
+
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <i class="fa fa-exclamation-circle"></i>
+                    Announcements
+                </h3>
+            </div>
+            <ul class="list-group">
+                @foreach (var item in Model)
+                {
+                    if (item.PostedDate > (DateTime.Today.AddDays(-30)))
+                    {
+                        <a class="list-group-item list-group-item-danger" href='@(Url.Action("Details", "Articles", new { id = item.ArticleId }))'><b>@item.Headline</b></a>
+                    }
+                    else
+                    {
+                        <a class="list-group-item" href='@(Url.Action("Details", "Articles", new { id = item.ArticleId }))'>@item.Headline</a>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="panel panel-primary">
+
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <i class="fa fa-check-square"></i>
+                    Pre-Season Checklist
+                </h3>
+            </div>
+            <ul class="list-group">
+                @*<li class="list-group-item">Weight Training - Register for Adv PE in January</li>*@
+                <a class="list-group-item" href="@(Url.Action("Staff", "Coaches"))">Club Training - Year Round Options. Email Head Coach for More Info</a>
+                <a class="list-group-item" href="http://www.registermyathlete.com" target="_blank">Register My Athlete - Deadline 1/31/2020</a>
+                <a class="list-group-item" href="https://docs.google.com/forms/d/e/1FAIpQLScXp_m-PpEgH6EDPT0FRR09ubtI8SdQIWBPN-j9pjjWV8YEyw/viewform">2020 Code of Conduct</a>
+                <a class="list-group-item" href="http://eepurl.com/bQPz89" target="_blank">Join Our Mailing List</a>
+                <a class="list-group-item" href="@(Url.Action("TrackFees", "Boosters"))" target="_blank">Pay Booster Dues</a>
+                <a class="list-group-item" href="https://docs.google.com/forms/d/1_g51jXgZoCQtJZhATjCG6OtCNzBw366dbfwsV-93-G0/viewform" target="_blank">Volunteer Sign Up</a>
+                
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+
+        <div id="carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+
+                @foreach (var imgPath in Directory.GetFiles(Server.MapPath("~/Images/MeetPics/"), "*.jpg").OrderBy(x => Guid.NewGuid()).Select((value, i) => new { i, value }))
+                {
+                    var img = new FileInfo(imgPath.value);
+
+                    <div class="@Html.DisplayName(imgPath.i == 0 ? "item active" : "item")">
+                        <img class="img-responsive center-block rounded-carousel" src="@Url.Content(String.Format("~/Images/MeetPics/{0}", img.Name))" />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="panel panel-primary panel-group">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <i class="fa fa-bolt"></i>
+                    Arizona State Champions
+                </h3>
+            </div>
+            <div class="panel-body">
+                <h4>
+                    <b><em>Girls:</em> 2004, 1999<br /></b>
+                    <br />
+                    <b><em>Boys:</em> 2018, 2015, 2009, 2008, 2007</b>
+                </h4>
+            </div>
+            <div class="panel-footer">
+                <h5><strong>Runners-Up</strong></h5>
+                <em>Girls:</em> 2018, 2017, 2014, 2013, 2010, 2006, 2005, 2003, 2002, 2001<br />
+                <br />
+                <em>Boys:</em> 2017, 2016, 2014, 2006, 2005
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

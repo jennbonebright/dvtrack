@@ -1,0 +1,17 @@
+﻿@model IEnumerable<DVTrack.Models.Mark>
+
+@foreach (var item in Model.Where(g => g.Gender == "M"))
+{
+    DateTime? markTime = item.Time;
+    decimal? markMeters = item.Meters;
+    decimal? markInches = item.Inches;
+                            
+
+    <tr>
+        <td>@Html.ValueFor(model => item.AthleteName)</td>
+        <td>@Html.ValueFor(model => item.Year)</td>
+        <td>@(markTime != null ? markTime.Value.Minute > 0 ? markTime.Value.ToString("mm:ss.ff") : markTime.Value.ToString("ss.ff") :
+                                markMeters != null ? markMeters.ToString() :
+                                markInches != null ? markInches.ToString() : "")</td>
+    </tr>
+}

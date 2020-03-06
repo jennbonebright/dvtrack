@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "Frequently Asked Questions / Booster Information";
+}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            @ViewBag.Title
+        </h3>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+
+        <ul class="list-group">
+            <li class="list-group-item active">Oversight</li>
+            <a class="list-group-item" target="_blank" href="http://www.dvhsthunderboard.org/">Thunder Board Association</a>
+        </ul>
+
+        <ul class="list-group">
+
+            <li class="list-group-item active">Officers</li>
+            <li class="list-group-item ">Nominations Open</li>
+            @foreach (var item in ViewBag.Officers)
+            {
+                <a class="list-group-item" href="mailto:@item.Email"><strong>@item.Title: </strong>@item.Name</a>
+            }
+        </ul>
+        <ul class="list-group">
+            <li class="list-group-item active">Committees</li>
+            <li class="list-group-item"><strong>Volunteer Coordinator:</strong> [open]</li>
+            <li class="list-group-item"><strong>Concessions:</strong> [open]</li>
+            <li class="list-group-item"><strong>Banquet Planning:</strong> [open]</li>
+            <li class="list-group-item"><strong>Picnic Planning:</strong> [open]</li>
+            <li class="list-group-item"><strong>Team Shirts:</strong> [open]</li>
+            <li class="list-group-item"><strong>Spirit Wear:</strong> [open]</li>
+            <li class="list-group-item"><strong>Photography:</strong> Daniel Der</li>
+            <li class="list-group-item"><strong>Hospitality:</strong> [open]</li>
+            <li class="list-group-item"><strong>Social Media:</strong> [open]</li>
+            <li class="list-group-item"><strong>Website:</strong> Jennifer Bonebright</li>
+        </ul>
+    </div>
+    <div class="col-md-9">
+        @*@{Html.RenderPartial((string)ViewBag.Partial);}*@
+        @*@{Html.RenderPartial("Calendar");}*@
+        <div class="well">
+            <h3>How do I support DV Track and Field?</h3>
+            <P>
+                Track and Field's biggest expense are our award winning coaches. <b>We need your tax credit donation to continue their support of our athletes.</b>
+            </P>
+            <p>
+                Thank you for your support!
+                Booster membership is one of the reasons we have such an outstanding program.
+                2019 Program Support Fees are $55.
+                This fee helps us pay for all the items big and small that our district does not cover with your $50 activity fee.
+                Just a few of the items we expect to pay for this year:
+                <ul>
+                    <li>Athlete End of Year Picnic</li>
+                    <li>Equipment and Training Implements</li>
+                    <li>Varsity Banquet/Awards</li>
+                    <li>Senior Recognition</li>
+                    <li>Hospitality Suite</li>
+                    <li>Meet Volunteer Food/Drink</li>
+                    <li>Coaches Clinics/Training</li>
+                    <li>Meet Entry Fees</li>
+                    <li>Thunder Board Dues</li>
+                </ul>
+            </p>
+            <p>
+                Our prefered method of payment is to our <strong><a target="_blank" href="https://www.tempeunion.org/domain/72">Tax Credit account</a></strong>.
+                Even if you have contributed your maximum refundable amount, you can still direct your program support fees to this account.
+                Once logged in, select your student and click "Items At Student's School".
+                Scroll towards the bottom of the page to find "TAX CREDIT - TRACK".
+                We are requesting a minimum of $55, but you can elect up to the maximum allowable refundable amount.
+                For more information about these funds, or to request a copy of our financials, please send us an <strong><a href="mailto:boosters@dvtrack.com">email</a></strong>
+            </p>
+
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item active">Booster Donations</li>
+            <a class="list-group-item" target="_blank" href="https://www.tempeunion.org/domain/72"><span class='fa fa-dollar'></span> Tax Credit Account Donation (preferred)</a>
+            <a class="list-group-item" target="_blank" href="https://squareup.com/store/dvtrack/item/booster-membership-donation"><span class='fa fa-dollar'></span> Booster Funds Donation</a>
+            <a class="list-group-item" target="_blank" href="https://docs.google.com/forms/d/1_g51jXgZoCQtJZhATjCG6OtCNzBw366dbfwsV-93-G0/viewform"><span class='fa fa-heart'></span> Volunteer Registration - program support fees can be waived for those who complete five hours of service to our team.</a>
+        </ul>
+        <ul class="list-group">
+            <li class="list-group-item active">Forms</li>
+            <a class="list-group-item" target="_blank" href="http://eepurl.com/bQPz89"><span class='fa fa-list'></span> Join our Mailing List - Help us connect you to your athlete and stay up to date.</a>
+            <a class="list-group-item" target="_blank" href="https://www.frysfood.com/topic/community/#/new-community-rewards-program"><span class='fa fa-money'></span> Fry's Community Rewards - Re-enroll Now</a>
+            <a class="list-group-item" target="_blank" href="~/Docs/taxCreditForm.pdf"><span class='fa fa-print'></span> Print Tax Credit Form - submit a check to DV Bookstore.</a>
+            <a class="list-group-item" target="_blank" href="http://www.statefoodsafety.com/"><span class='fa fa-cutlery'></span> Food Handlers Certification</a>
+        </ul>
+
+    </div>
+</div>
+

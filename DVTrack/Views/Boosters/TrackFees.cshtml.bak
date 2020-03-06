@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "Track Fees";
+}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+            @ViewBag.Title
+        </h3>
+    </div>
+
+</div>
+<div class="col-md-12">
+    <p>
+        Thank you for your support!
+        Booster membership is one of the reasons we have such an outstanding program.
+        2019 Program Support Fees are $75.
+        This fee helps us pay for all the items big and small that our district does not cover with your $50 activity fee.
+    </p>
+    <p>
+        Our prefered method of payment is to our <strong><a target="_blank" href="https://www.tempeunion.org/domain/72">Tax Credit account</a></strong>.
+        Even if you have contributed your maximum refundable amount, you can still direct your program support fees to this account.
+        Once logged in, select your student and click "Items At Student's School".
+        Scroll towards the bottom of the page to find "TAX CREDIT - TRACK".
+        We are requesting a minimum of $75, but you can elect up to the maximum allowable refundable amount.
+        For more information about these funds, or to request a copy of our financials, please send us an <strong><a href="mailto:boosters@dvtrack.com">email</a></strong>
+    </p>
+
+    <ul class="list-group">
+        <li class="list-group-item active">Online Payment Links</li>
+        <a class="list-group-item" target="_blank" href="https://www.tempeunion.org/domain/72"><span class='fa fa-dollar'></span> Tax Credit Account Donation (preferred)</a>
+        <a class="list-group-item" target="_blank" href="https://squareup.com/store/dvtrack/item/booster-membership-donation"><span class='fa fa-dollar'></span> Booster Funds Donation</a>
+    </ul>
+
+</div>
+<div class="col-md-12 well">
+    <div class="col-md-4">
+        <span>
+            Tax Credit Donation (counts towards Program Support Fees) $75
+            Pay online or in bookstore
+            Track and Field's biggest expense are our award winning coaches. <b>We need your tax credit donation to continue their support of our athletes.</b>
+        </span>
+        <p>
+            <link href="https://www.tempeunion.org/domain/72">Pay by Tax Credit</link>
+        </p>
+    </div>
+    <div class="col-md-4">
+
+
+        Booster Program Support Fees $75
+        Pay online
+        <ul>
+            <li>Athlete End of Year Picnic</li>
+            <li>Equipment and Training Implements</li>
+            <li>Varsity Banquet/Awards</li>
+            <li>Senior Recognition</li>
+            <li>Hospitality Suite</li>
+            <li>Meet Volunteer Food/Drink</li>
+            <li>Meet Entry Fees</li>
+            <li>Thunder Board Dues</li>
+        </ul>
+    </div>
+    <div class="col-md-4">
+        Participation Fee $50
+        Pay in bookstore upon Track and Field registration.
+    </div></div>
+<div class="col-md-12 well">
+    <div class="col-md-4">
+        Picnic Ticket (Free for DV Track athletes)
+        RSVP online
+    </div>
+    
+    <div class="col-md-4">
+        Varsity/Senior Banquet (Free for Varsity and Senior Athletes)
+        Pay online
+    </div>
+    <div class="col-md-4">
+        Hospitality Donation (additional support for coaches long days)
+        Pay online
+    </div>
+</div>
+<div class="col-md-12 well">
+    <div class="col-md-4">
+        Picnic Ticket $5 (DV Track Family and Friends)
+        Pay online
+    </div>
+    <div class="col-md-4">
+
+
+        Varsity/Senior Banquet $25 (DV Track Family and Friends)
+        Pay online
+    </div>
+    <div class="col-md-4">
+        Arcadia Expenses (TBD by number of participants)
+        Pay online
+    </div>
+</div>
+

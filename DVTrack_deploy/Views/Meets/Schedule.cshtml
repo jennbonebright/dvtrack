@@ -1,0 +1,41 @@
+﻿@model IEnumerable<DVTrack.Models.Meet>
+
+@{
+    ViewBag.Title = "Schedule";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title"><span class="glyphicon glyphicon-calendar" aria-hidden="true"> </span>@ViewBag.Message</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-hover ">
+            <thead>
+                <tr>
+                    <th>Date/Time</th>
+                    <th>Event</th>
+                    <th>Location</th>
+                    <th>Notes</th>
+                    <th>Results</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.ValueFor(model => item.MeetDate, "{0:dddd}")
+                            <br />@Html.ValueFor(model => item.MeetDate, "{0:MMMM dd, yyyy}")
+                            <br />@Html.ValueFor(model => item.MeetDate, "{0:hh:mm tt}")</td>
+                        <td>@Html.ValueFor(model => item.MeetTitle)</td>
+                        <td>@Html.ValueFor(model => item.LocationName)
+                            <br />@Html.ValueFor(model => item.LocationAddress1)
+                            <br />@Html.ValueFor(model => item.LocationAddress2)</td>
+                        <td>@Html.ValueFor(model => item.Notes)</td>
+                        <td>Results<br />
+                            Photos</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

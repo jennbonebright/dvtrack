@@ -1,0 +1,75 @@
+﻿@model DVTrack.Models.Mark
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Mark</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Year)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Year)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Event)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Event)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Time)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Meters)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Meters)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Inches)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Inches)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Gender)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Gender)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Grade)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Grade)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AthleteName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AthleteName)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,64 @@
+﻿@model DVTrack.Models.Coach
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Coach</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FullName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FullName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PhotoSrc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PhotoSrc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Biography)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Biography)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Group)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Group)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Event)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Event)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.StaffId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<DVTrack.Models.Meet>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.YearId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeetTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MeetDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationAddress1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationAddress2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArticleId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResultLink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhotoLink)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.YearId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeetTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MeetDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LocationName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LocationAddress1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LocationAddress2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArticleId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Notes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResultLink)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhotoLink)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MeetId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MeetId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MeetId })
+        </td>
+    </tr>
+}
+
+</table>

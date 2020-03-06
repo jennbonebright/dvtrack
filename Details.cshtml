@@ -1,0 +1,38 @@
+﻿@model DVTrack.Models.Coach
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> @Html.DisplayFor(model => model.FullName)</h3>
+    </div>
+
+</div>
+<div class="col-md-4">
+    <img src="@Html.DisplayFor(model => model.PhotoSrc)" class="img-responsive center-block" />
+</div>
+<div class="col-md-8">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">@Html.DisplayFor(model => model.Title) - @Html.DisplayFor(model => model.Event)</h3>
+        </div>
+        <div class="panel-body">
+            @Html.Raw(Html.DisplayFor(model => model.Bio).ToString()
+            .Replace("\n","<p>")
+            .Replace("~~","<ul>")
+            .Replace("**","<li>")
+            .Replace("##","</li>")
+            .Replace("@@","</ul>"))
+        </div>
+        <div class="panel-footer">
+            <strong>Email:</strong> <a href="mailto:@Html.DisplayFor(model => model.Email)">@Html.DisplayFor(model => model.Email)</a>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StaffId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

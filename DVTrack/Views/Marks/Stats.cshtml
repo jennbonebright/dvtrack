@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Records";
+}
+
+@section MyScripts {
+    <script type='text/javascript'>
+        $('#ClassesList').change(function () {
+            var classesId = $(this).val();
+            var selectedID = $("#EventList").val();
+            $.ajax({
+                url: "/Marks/Refresh",
+                type: "GET",
+                data: { EventId: selectedID, ClassId: classesId }
+            })
+            .done(function (partialViewResult) {
+                $("#pvMarks").html(partialViewResult);
+            });
+        });
+
+        $('#EventList').change(function () {
+            var selectedID = $(this).val();
+            var classesId = $("#ClassesList").val();
+            $.ajax({
+                url: "/Marks/Refresh",
+                type: "GET",
+                data: { EventId: selectedID, ClassId: classesId }
+            })
+            .done(function (partialViewResult) {
+                $("#pvMarks").html(partialViewResult);
+            });
+        });
+    </script>
+}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
+            @ViewBag.Message
+        </h3>
+    </div>
+</div>
+<div class="panel-body">
+    @using (Html.BeginForm("Stats", "Marks"))
+    {
+        <div class="col-md-3">
+            @Html.DropDownList("ClassesList", (SelectList)ViewBag.Classes, new { @class = "form-control" })
+        </div>
+        <div class="col-md-6">
+            @Html.DropDownList("EventList", (SelectList)ViewBag.Events, new { @class = "form-control" })
+        </div>
+        <div class="col-md-3"></div>
+
+    }
+</div>
+<div class="col-md-12 panel-body" id="pvMarks">
+    @{Html.RenderPartial("PartialMarks");}
+</div>
+<div class="col-md-12 panel-heading">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                @Html.ActionLink("More...", "MoreMarks", "Marks")
+            </h3>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,420 @@
+﻿@{
+    ViewBag.Title = "Frequently Asked Questions";
+}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            @ViewBag.Title
+        </h3>
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-md-9">
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <strong>How do I sign up for the Track Team?<br></strong>
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <ol>
+                            <li>
+                                Go to
+                                <a href="http://www.registermyathlete.com" target="_blank">Register My Athlete</a> and complete requirements.
+                            </li>
+                            <li>
+                                Read and sign the <a href="https://docs.google.com/forms/d/e/1FAIpQLScXp_m-PpEgH6EDPT0FRR09ubtI8SdQIWBPN-j9pjjWV8YEyw/viewform" target="_blank">Code of Conduct</a>.
+                            </li>
+                            <li>
+                                Pay @Html.ActionLink("Program Support Fees", "TrackFees", "Boosters").
+                            </li>
+                            <li>
+                                Join the
+                                <a href="http://eepurl.com/bQPz89" target="_blank">Mailing List</a>.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <strong>What events does Desert Vista have?<br></strong>
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul>
+                            <li>Distance Running (800m, 1600m, 3200m, Distance Relays)</li>
+                            <li>Sprints / Hurdles (100m, 200m, 400m, Sprint Relays, 110/100 Hurdles, 300m Hurdles)</li>
+                            <li>Vertical Jumps (High), Horizontal (Long/Triple)</li>
+                            <li>Pole Vault</li>
+                            <li>Throws (Discus, Shot Put, Javelin)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <strong>Do I need to try out for the track Team?<br></strong>
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        No, track is a non cut sport.  Just complete the registration and come to practice!
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="heading4">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                            <strong>How much does it cost?<br></strong>
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordion">
+                    <div class="card-body">
+                        $50 Participation Fee payable in the bookstore.<br />
+                        $75 @Html.ActionLink("Program Support Fee", "TrackFees", "Boosters"): funds team activities, meets, coaching, equipment, uniforms, Thunderboard dues, concessions, etc.
+                        Additional tax credit donations and hospitality donations to support our amazing and dedicated coaches are ALWAYS welcome! (link)
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="heading5">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                            <strong>Do I have to buy a uniform?<br></strong>
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordion">
+                    <div class="card-body">
+                        Uniforms are provided prior to the first meet provided the athlete has completed the
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScXp_m-PpEgH6EDPT0FRR09ubtI8SdQIWBPN-j9pjjWV8YEyw/viewform" target="_blank">Code of Conduct</a>.
+                        Uniforms are to be returned at the end of the athlete's season. Athletes will be charged for lost or damaged uniforms.
+                        Athletes are required to buy their own shoes and spikes.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="heading6">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                            <strong>Do I need special shoes for track?<br></strong>
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordion">
+                    <div class="card-body">
+                        To avoid injury and maximize performance, it is recommended that athletes wear good quality shoes appropriate to their sport.
+                        <a href="http://www.solesportsrunning.com/ " target="_blank">Sole Sports</a> has shoes for every Track & Field sport and gives a discount to DV Track athletes.
+                        Watch for an announcement about their annual DV Track & Field discount event.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="heading7">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                            <strong>When is Track season?<br></strong>
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordion">
+                    <div class="card-body">
+                        The first week in February for ALL through the second week in May for Varsity. Others finish mid April.
+                        Check the <a href="http://www.dvtrack.com " target="_blank">www.dvtrack.com </a> website for updates.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="heading8">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                            <strong>When are the practice times scheduled for my sport?</strong>
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapse8" class="collapse" aria-labelledby="heading8" data-parent="#accordion">
+                    <div class="card-body">
+                        Distance meets Monday and Thursday mornings at 5:00am, Tuesday and Wednesday after school.
+                        All other disciplines meet Monday through Thursday after school with occasional practices on Saturday mornings. *Practice dates/times change at team coach's discretion
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="heading9">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                            <strong>When are this season's track meets?<br></strong>
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapse9" class="collapse" aria-labelledby="heading9" data-parent="#accordion">
+                    <div class="card-body">
+                        Click @Html.ActionLink("here", "Schedule", "Meets") for current schedule.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="heading10">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                            <strong>How can I find out about preseason training for my sport?<br></strong>
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapse10" class="collapse" aria-labelledby="heading10" data-parent="#accordion">
+                    <div class="card-body">
+                        Contact <a href="mailto:coachhanson@q.com">Coach Chris Hanson</a> (boys) or <a href="mailto:ccline@tempeunion.org">Coach Cassandra Cline-McKenzie</a> (girls) for information.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="heading11">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                            <strong>Should I sign up for Advanced PE?<br></strong>
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapse11" class="collapse" aria-labelledby="heading11" data-parent="#accordion">
+                    <div class="card-body">
+                        Track athletes are encouraged but not required to register for Advanced PE zero hour sophomore through Senior year.
+                        Zero hour PE provides specialized training for Track athletes.  There may be a fee for zero hour classes upon registration.
+                        Students are required to take 1 credit of PE to graduate.
+                        Zero hour PE can be taken multiple times for credit and can even be taken as an honors class.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="heading12">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                            <strong>Will I have to miss classes to attend track meets?<br></strong>
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapse12" class="collapse" aria-labelledby="heading12" data-parent="#accordion">
+                    <div class="card-body">
+                        Yes, some of the meets are held during school hours, some are after school, and some are on Saturdays.
+                        Students are encouraged to let their teachers know in advance of any anticipated absences for track meets.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="heading13">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
+                            <strong>Will I need to travel to track meets?<br></strong>
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapse13" class="collapse" aria-labelledby="heading13" data-parent="#accordion">
+                    <div class="card-body">
+                        Yes, for all "Away meets".  Also, some Varsity team members who qualify have the opportunity to travel to Arcadia, CA for a national competition.
+                        See Schedule for dates.  Additional fees required.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="heading14">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
+                            <strong>Will I need to attend every meet?<br></strong>
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapse14" class="collapse" aria-labelledby="heading14" data-parent="#accordion">
+                    <div class="card-body">
+                        Meets are either open or invitational.  All athletes are encouraged to participate in open meets.  Coaches will select athletes to participate in invitational meets.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="heading15">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
+                            <strong>Do I need to stay for the entire meet or can I leave after I am finished competing?<br></strong>
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapse15" class="collapse" aria-labelledby="heading15" data-parent="#accordion">
+                    <div class="card-body">
+                        All athletes are required to stay for the entire meet.  Athletes need to stay and support their team members, assist coaches, and help with equipment.  Staying for the entire meet shows team spirit!  Athletes may leave early only with permission from their coach for special circumstances.
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                        Q&A for Parents
+                    </h3>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="card-header" id="heading16">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
+                            <strong>I paid the $50 Registration Fee.  Why do I need to pay an additional $75 Program Support Fee?<br></strong>
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapse16" class="collapse" aria-labelledby="heading16" data-parent="#accordion">
+                    <div class="card-body">
+                        The Program Support fee pays for all the items big and small that our district does not cover with your $50 activity fee such as:
+                        <ul>
+                            <li>Coaches Clinics/Training</li>
+                            <li>Equipment and Training Implements</li>
+                            <li>Athlete End of Year Picnic</li>
+                            <li>Varsity Banquet/Awards/Senior Recognition</li>
+                            <li>Hospitality Suite/Meet Volunteer Food/Drink</li>
+                            <li>Meet Entry Fees</li>
+                            <li>Thunder Board Dues</li>
+                            <li>And more...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="heading17">
+                    <h5 class="mb-0">
+                        <span class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse17" aria-expanded="false" aria-controls="collapse17">
+                            <strong>I have already fulfilled my Tax Credit Donation for the year. Why should I pay the Program Support fee as a Tax Credit?</strong>
+                        </span>
+                    </h5>
+                </div>
+                <div id="collapse17" class="collapse" aria-labelledby="heading17" data-parent="#accordion">
+                    <div class="card-body">
+                        If you pay this fee as a tax credit donation, it allows us to use the money to pay our fantastic and dedicated coaches a stipend for all the extra hours they put in to run the DV Track & Field program.  Fees paid outside the Tax Credit Donation program cannot be used to pay the coaches, although they can be used to pay for all other items.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="heading18">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse18" aria-expanded="false" aria-controls="collapse18">
+                            <strong>How can I help support the Desert Vista Track Team?<br></strong>
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapse18" class="collapse" aria-labelledby="heading18" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul>
+                            <li>Volunteer your time!</li>
+                            <li>Pay your program support fees by making a tax credit donation.</li>
+                            <li>Help with the Hospitality suite by donating money or bringing food.</li>
+                            <li>Contact the coaches or any of the Booster Club Board members for more information on volunteer opportunities.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="heading19">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse19" aria-expanded="false" aria-controls="collapse19">
+                            <strong>What volunteer opportunities are there?<br></strong>
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapse19" class="collapse" aria-labelledby="heading19" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul>
+                            <li>Volunteer Coordination</li>
+                            <li>Concessions (shopping for food, setting up, working shifts, clean up)</li>
+                            <li>Apparel (coordinate t-shirt order, coordinate spirit wear order)</li>
+                            <li>Hospitality (coordinate food and drink for coaches and volunteers at home meets)</li>
+                            <li>Social Media (post updates)</li>
+                            <li>Discipline Liaisons (representative from each sport)</li>
+                            <li>Help at the meets with timing, assisting coaches, and helping with equipment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="heading20">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse20" aria-expanded="false" aria-controls="collapse20">
+                            <strong>If I volunteer at a track meet, will I be able to watch  my son / daughter compete?<br></strong>
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapse20" class="collapse" aria-labelledby="heading20" data-parent="#accordion">
+                    <div class="card-body">
+                        Yes!  If we have plenty of volunteers, it will make it easy for each of us to slip out and watch our favorite team members compete while others cover for us!
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-3">
+
+        <ul class="list-group">
+            <li class="list-group-item active">Oversight</li>
+            <a class="list-group-item" target="_blank" href="http://www.dvhsthunderboard.org/">Thunder Board Association</a>
+        </ul>
+
+        <ul class="list-group">
+
+            <li class="list-group-item active">Officers</li>
+            <li class="list-group-item "><strong>President:</strong> Cathy Lloyd</li>
+			<li class="list-group-item "><strong>Vice President:</strong> Sonja Tinsley</li>
+			<li class="list-group-item "><strong>Treasurer:</strong> Janet Smith</li>
+			<li class="list-group-item "><strong>Secretary:</strong> Kenda vonHamm</li>
+			<li class="list-group-item "><strong>Co-Secretary:</strong> OPEN</li>
+			<a class="list-group-item" target="_blank" href="mailto:dvhsthundertrack@gmail.com"><strong>Want to Volunteer? Email Us!</strong></a>
+        </ul>
+            @foreach (var item in ViewBag.Officers)
+            {
+                <a class="list-group-item" href="mailto:@item.Email"><strong>@item.Title: </strong>@item.Name</a>
+            }
+        </ul>
+        <ul class="list-group">
+            <li class="list-group-item active">Committees</li>
+            <li class="list-group-item"><strong>Volunteer Coordinator:</strong> [open]</li>
+            <li class="list-group-item"><strong>Concessions:</strong> Sonja Tinsley, Lisa Hoyt</li>
+            <li class="list-group-item"><strong>Banquet Planning:</strong> Debbie Griffiths</li>
+            <li class="list-group-item"><strong>Picnic Planning:</strong> Lupita Van Alstine</li>
+            <li class="list-group-item"><strong>Apparel:</strong> Vanesa Nichols</li>
+            <li class="list-group-item"><strong>Sponsorship:</strong> Matt Nichols</li>
+            <li class="list-group-item"><strong>Photography:</strong> Daniel Der</li>
+            <li class="list-group-item"><strong>Hospitality:</strong> Brandye Billeter</li>
+            <li class="list-group-item"><strong>Social Media:</strong> [open]</li>
+            <li class="list-group-item"><strong>Website:</strong> [open]</li>
+			<a class="list-group-item" target="_blank" href="mailto:dvhsthundertrack@gmail.com"><strong>Want to Volunteer? Email Us!</strong></a>
+        </ul>
+    </div>
+</div>
+
