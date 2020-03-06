@@ -1,0 +1,110 @@
+﻿@model DVTrack.Models.Meet
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Meet</legend>
+
+        @Html.HiddenFor(model => model.MeetId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.YearId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.YearId)
+            @Html.ValidationMessageFor(model => model.YearId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MeetTitle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MeetTitle)
+            @Html.ValidationMessageFor(model => model.MeetTitle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MeetDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MeetDate)
+            @Html.ValidationMessageFor(model => model.MeetDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LocationName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LocationName)
+            @Html.ValidationMessageFor(model => model.LocationName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LocationAddress1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LocationAddress1)
+            @Html.ValidationMessageFor(model => model.LocationAddress1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LocationAddress2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LocationAddress2)
+            @Html.ValidationMessageFor(model => model.LocationAddress2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ArticleId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ArticleId)
+            @Html.ValidationMessageFor(model => model.ArticleId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Notes)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Notes)
+            @Html.ValidationMessageFor(model => model.Notes)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ResultLink)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ResultLink)
+            @Html.ValidationMessageFor(model => model.ResultLink)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PhotoLink)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PhotoLink)
+            @Html.ValidationMessageFor(model => model.PhotoLink)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

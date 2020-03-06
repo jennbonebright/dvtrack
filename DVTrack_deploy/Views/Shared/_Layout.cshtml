@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="float-left">
+                <img src="~/Images/letterhead.jpg" />
+            </div>
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li class="dropdown">
+                    <a href="~/Home/Staff" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Staff <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="~/Coaches/Staff?type=sprint">Sprints/Hurdles</a></li>
+                        <li class="divider"></li>
+                        <li><a href="~/Coaches/Staff?type=dist">Distance</a></li>
+                        <li class="divider"></li>
+                        <li><a href="~/Coaches/Staff?type=vj">Verticle Jumps</a></li>
+                        <li class="divider"></li>
+                        <li><a href="~/Coaches/Staff?type=hj">Horizontal Jumps</a></li>
+                        <li class="divider"></li>
+                        <li><a href="~/Coaches/Staff?type=throw">Throws</a></li>
+                    </ul>
+                </li>
+                <li>@Html.ActionLink("Schedule", "Schedule", "Meets")</li>
+                <li>@Html.ActionLink("Stats", "Stats", "Home")</li>
+                <li class="dropdown">
+                    <a href="~/Home/Boosters" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Boosters <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="~/Home/Boosters?type=vol">Volunteers</a></li>
+                        <li class="divider"></li>
+                        <li><a href="~/Home/Boosters?type=meetings">Meetings</a></li>
+                        <li class="divider"></li>
+                        <li><a href="~/Home/Boosters?type=merch">Spirit Wear</a></li>
+                        <li class="divider"></li>
+                        <li><a href="~/Home/Boosters?type=fund">Fundraisers</a></li>
+                        <li class="divider"></li>
+                        <li><a href="~/Home/Boosters?type=eoy">End of Year Activities</a></li>
+                    </ul>
+                </li>
+                <li>@Html.ActionLink("Resources", "Resources", "Home")</li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Admin <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="~/Coaches/Index">Manage Staff</a></li>
+                        <li class="divider"></li>
+                        <li><a href="~/Meets/Index">Manage Schedule</a></li>
+                        <li class="divider"></li>
+                        <li><a href="~/Home/Staff?type=vj">Manage Stats</a></li>
+                        <li class="divider"></li>
+                        <li><a href="~/Home/Staff?type=hj">Manage Boosters</a></li>
+                        <li class="divider"></li>
+                        <li><a href="~/Home/Staff?type=throw">Manage Resources</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </nav>
+        @*        <div class="content-wrapper">
+            <ul class="nav nav-tabs">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Staff", "Staff", "Home")</li>
+                <li>@Html.ActionLink("Roster", "Roster", "Home")</li>
+                <li>@Html.ActionLink("Schedule", "Schedule", "Home")</li>
+                <li>@Html.ActionLink("Stats", "Stats", "Home")</li>
+                <li>@Html.ActionLink("Gallery", "Gallery", "Home")</li>
+                <li>@Html.ActionLink("Boosters", "Boosters", "Home")</li>
+                <li>@Html.ActionLink("Resources", "Resources", "Home")</li>
+            </ul>
+            <div class="float-right">
+                <section id="login">
+                    @Html.Partial("_LoginPartial")
+                </section>
+            </div>
+        </div>*@
+    </header>
+    <div id="body">
+
+        @RenderSection("featured", required: false)
+
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Desert Vista Track and Field</title>
+    <link href="~/favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @*@Scripts.Render("~/bundles/modernizr")*@
+
+    <link href="~/Content/site.css?v1=1" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/dv_custom.css?v1=1" rel="stylesheet" />
+    <link href="/Content/font-awesome-4.4.0/css/font-awesome.css" rel="stylesheet" />
+
+</head>
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="float-left">
+                <img class="img-responsive" src="~/Images/letterhead.jpg" />
+            </div>
+        </div>
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+        {
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span>Menu</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("News", "News", "Articles")</li>
+
+                            @*<li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Staff <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+                <li>@Html.ActionLink("Sprints/Hurdles", "Staff", "Coaches", new { id = "sprint" }, null)</li>
+                <li>@Html.ActionLink("Distance", "Staff", "Coaches", new { id = "dist" }, null)</li>
+                <li>@Html.ActionLink("Vertical Jumps", "Staff", "Coaches", new { id = "vj" }, null)</li>
+                <li>@Html.ActionLink("Horizontal Jumps", "Staff", "Coaches", new { id = "hj" }, null)</li>
+                <li>@Html.ActionLink("Throws", "Staff", "Coaches", new { id = "throw" }, null)</li>
+
+            </ul>
+        </li>*@
+                            <li>@Html.ActionLink("Staff", "Staff", "Coaches")</li>
+                            <li>@Html.ActionLink("Schedule", "Schedule", "Meets")</li>
+                            <li>@Html.ActionLink("Records", "Stats", "Marks")</li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">FAQs<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>@Html.ActionLink("FAQs", "FAQs", "Boosters")</li>
+                                    <li><a href="http://eepurl.com/bQPz89" target="_blank">Mailing List</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Track Fees/Support<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>@Html.ActionLink("Track Fees", "TrackFees", "Boosters")</li>
+                                    <li><a href="http://store.dvtrack.com" target="_blank">Track Shop</a></li>
+                                    <li><a href="https://docs.google.com/forms/d/1_g51jXgZoCQtJZhATjCG6OtCNzBw366dbfwsV-93-G0/viewform" target="_blank">Volunteer Signup</a></li>
+                                </ul>
+                            </li>
+                            <li>@Html.ActionLink("Resources", "Resources", "Resources")</li>
+                            @*<li class="active"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfKlZs9VhQdTJbugwIjpK86wvPMNBYmCvnWPSH2jbrP1ioOCA/viewform" target="_blank">2018 Code of Conduct</a></li>*@
+
+                            @if (Request.IsAuthenticated)
+                            {
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Admin <span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="~/Coaches/Index">Manage Staff</a></li>
+                                        <li><a href="~/Meets/Index">Manage Schedule</a></li>
+                                        <li><a href="~/Marks/Index">Manage Stats</a></li>
+                                        <li><a href="~/Boosters/Index">Manage Boosters</a></li>
+                                        <li><a href="~/Resources/Index">Manage Resources</a></li>
+                                        <li><a href="~/Articles/Index">Manage News</a></li>
+                                        <li class="divider"></li>
+                                        @Html.AntiForgeryToken()
+                                        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                                    </ul>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                            }
+
+
+                        </ul>
+                        <!-- social media icons -->
+                        <ul class="nav navbar-nav navbar-right social">
+                            <li><a href="http://www.facebook.com/DvThunderTrack" target="_blank"><i class="fa fa-lg fa-facebook"></i></a></li>
+                            <li><a href="http://twitter.com/DVThunderTrack" target="_blank"><i class="fa fa-lg fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        }
+
+    </header>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+        <div class="text-center">
+            DV Track and Field would like to thank our sponsors for their generous donations towards our coaches hospitality
+        </div>
+        <div class="text-center">
+            <div class="sponsor"><a href="http://www.majerles.com" target="_blank"><img class="img-sponsor" src="~/Images/Sponsors/majerles.jpg" /></a></div>
+            <div class="sponsor"><a href="http://www.jasonsdeli.com" target="_blank"><img class="img-sponsor" src="~/Images/Sponsors/jasonsdeli.jpg" /></a></div>
+            <div class="sponsor"><a href="http://www.rudysbbq.com" target="_blank"><img class="img-sponsor" src="~/Images/Sponsors/rudys.jpg" /></a></div>
+            <div class="sponsor"><a href="http://www.chick-fil-a.com" target="_blank"><img class="img-sponsor" src="~/Images/Sponsors/chickfila.jpg" /></a></div>
+            <div class="sponsor"><a href="http://ckgrill.com/" target="_blank"><img class="img-sponsor" src="~/Images/Sponsors/cks.jpg" /></a></div>
+            <div class="sponsor"><a href="https://www.jimmyjohns.com/" target="_blank"><img class="img-sponsor" src="~/Images/Sponsors/jj.jpg" /></a></div>
+            <br/>
+            <div class="sponsor"><a href="#" target="_blank"><img class="img-sponsor" src="~/Images/Sponsors/fdslogo.jpg" alt="Fabian Spencer" /></a></div>
+            <div class="sponsor"><a href="http://www.accidentlawgroup.com" target="_blank"><img class="img-sponsor" src="~/Images/Sponsors/alg.jpg" /></a></div>
+            <div class="sponsor"><a href="http://www.mountainsidewellnessaz.com" target="_blank"><img class="img-sponsor" src="~/Images/Sponsors/mountainside.jpg" /></a></div>
+            <div class="sponsor"><a href="http://www.nonnahsmarketing.com" target="_blank"><img class="img-sponsor" src="~/Images/Sponsors/nm.png" /></a></div>
+        </div>
+
+        <div>
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year - Desert Vista Track and Field</p>
+            </div>
+        </div>
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+    @RenderSection("MyScripts", required: false)
+
+    <script type="text/javascript">
+        var appInsights = window.appInsights || function (config) {
+            function r(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, u = document, e = window, o = "script", s = u.createElement(o), i, f; for (s.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) r("track" + i.pop()); return r("setAuthenticatedUserContext"), r("clearAuthenticatedUserContext"), config.disableExceptionTracking || (i = "onerror", r("_" + i), f = e[i], e[i] = function (config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t["_" + i](config, r, u, e, o), s }), t
+        }({
+            instrumentationKey: "6aa339a0-5c74-4691-a010-4d6942b90312"
+        });
+
+        window.appInsights = appInsights;
+        appInsights.trackPageView();
+    </script>
+
+
+</body>
+</html>

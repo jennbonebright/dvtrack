@@ -1,0 +1,18 @@
+﻿@model DVTrack.Models.Article
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Model.Headline</h2>
+
+<div class="well">
+    <p>@Html.Raw(Model.ArticleBody)</p>
+    <div class="float-right"><em><small>posted @Model.PostedDate</small></em></div>
+
+</div>
+<p>
+    <div class="col-md-12">
+        <a href="@Url.Action("News", "Articles")" class="btn btn-default">More Thunder News</a>
+    </div>
+</p>

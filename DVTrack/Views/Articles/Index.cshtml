@@ -1,0 +1,51 @@
+﻿@model IEnumerable<DVTrack.Models.Article>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ExternalLink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Headline)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArticleBody)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExternalLink)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Headline)
+        </td>
+        <td>
+            @Html.DisplayName(string.IsNullOrWhiteSpace(item.ArticleBody) ? string.Empty : item.ArticleBody.Length > 50 ? item.ArticleBody.Substring(0,50) : item.ArticleBody)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ArticleId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ArticleId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ArticleId })
+        </td>
+    </tr>
+}
+
+</table>

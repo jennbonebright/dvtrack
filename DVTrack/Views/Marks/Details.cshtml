@@ -1,0 +1,71 @@
+﻿@model DVTrack.Models.Mark
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Mark</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Year)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Year)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Event)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Event)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Time)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Meters)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Meters)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Inches)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Inches)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Gender)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Gender)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Grade)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Grade)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AthleteName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AthleteName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.MarkId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

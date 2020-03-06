@@ -1,0 +1,33 @@
+﻿@model DVTrack.Models.Coach
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="col-md-3">
+    <img src="@Model.PhotoSrc" class="img-responsive img-rounded" />
+</div>
+
+<div class="col-md-9">
+
+
+    <blockquote>
+        <h4>About @Model.FullName</h4>
+    </blockquote>
+    <p>@Html.Raw(Model.Biography)</p>
+</div>
+<div class="col-md-9 col-md-offset-3 ">
+    <h4>Contact Information    </h4>
+
+</div>
+<div class="col-md-4 col-md-offset-3 ">
+    Email: <a href="mailto:@Model.Email">@Model.Email</a>
+
+</div>
+<div class="col-md-4">
+    Phone: @Model.PhoneNumber
+
+</div>
+<div class="col-md-12">
+        <a href="@Url.Action("Staff","Coaches", new { id = Model.Group })" class="btn btn-default">Return to List</a>
+</div>

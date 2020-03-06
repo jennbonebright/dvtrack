@@ -1,0 +1,95 @@
+﻿@model DVTrack.Models.Mark
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Mark</legend>
+
+        @Html.HiddenFor(model => model.MarkId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Year)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Year)
+            @Html.ValidationMessageFor(model => model.Year)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Event)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Event)
+            @Html.ValidationMessageFor(model => model.Event)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Time)
+        </div>
+        <div class="editor-field">
+@*            @Html.EditorFor(model => model.Time)*@
+             @Html.TextBoxFor(model => model.Time, "{0:MM/dd/yyyy HH:mm:ss.ff}")
+           @Html.ValidationMessageFor(model => model.Time)
+        </div>
+
+@*        <div class="editor-label">
+            @Html.LabelFor(model => model.Meters)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Meters)
+            @Html.ValidationMessageFor(model => model.Meters)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Inches)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Inches)
+            @Html.ValidationMessageFor(model => model.Inches)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Gender)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Gender)
+            @Html.ValidationMessageFor(model => model.Gender)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Grade)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Grade)
+            @Html.ValidationMessageFor(model => model.Grade)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AthleteName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AthleteName)
+            @Html.ValidationMessageFor(model => model.AthleteName)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

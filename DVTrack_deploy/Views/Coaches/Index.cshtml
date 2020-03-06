@@ -1,0 +1,69 @@
+﻿@model IEnumerable<DVTrack.Models.Coach>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhotoSrc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Biography)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Group)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Event)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhotoSrc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Biography)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Group)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Event)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StaffId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StaffId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StaffId })
+        </td>
+    </tr>
+}
+
+</table>

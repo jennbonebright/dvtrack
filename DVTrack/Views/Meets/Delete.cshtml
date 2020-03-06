@@ -1,0 +1,89 @@
+﻿@model DVTrack.Models.Meet
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Meet</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.YearId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.YearId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MeetTitle)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MeetTitle)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MeetDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MeetDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LocationName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LocationName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LocationAddress1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LocationAddress1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LocationAddress2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LocationAddress2)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ArticleId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ArticleId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Notes)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Notes)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ResultLink)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ResultLink)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PhotoLink)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PhotoLink)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

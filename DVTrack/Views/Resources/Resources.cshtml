@@ -1,0 +1,20 @@
+﻿@model IEnumerable<DVTrack.Models.Resource>
+@{
+    ViewBag.Title = "Thunder Resources";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>@ViewBag.Title</h3>
+    </div>
+</div>
+<div>
+
+    <div class="well">
+        @foreach (var item in Model)
+        {
+            <a class="list-group-item" target="_blank" href="@item.ResourceLink">@item.Title</a>
+        }
+
+    </div>
+</div>

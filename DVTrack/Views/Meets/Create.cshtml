@@ -1,0 +1,126 @@
+﻿@model DVTrack.Models.Meet
+
+@{
+    ViewBag.Title = "Create";
+}
+@section MyScripts {
+
+    <script type="text/javascript">
+        $(function () {
+            $('#datepicker').datetimepicker({
+            });
+        });
+    </script>
+}
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Meet</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.YearId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.YearId)
+            @Html.ValidationMessageFor(model => model.YearId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MeetTitle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MeetTitle)
+            @Html.ValidationMessageFor(model => model.MeetTitle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MeetDate)
+        </div>
+        <div class="editor-field">
+                <div class="row">
+                    <div class='col-sm-4'>
+                        <div class="form-group">
+                            <div class='input-group date' id='datepicker'>
+                                <input type='text' class="form-control" name="MeetDate" id="MeetDate" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @Html.ValidationMessageFor(model => model.MeetDate)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LocationName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LocationName)
+            @Html.ValidationMessageFor(model => model.LocationName)
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("Address")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LocationAddress1)
+            @Html.ValidationMessageFor(model => model.LocationAddress1)
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("City, State, Zip")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LocationAddress2)
+            @Html.ValidationMessageFor(model => model.LocationAddress2)
+        </div>
+
+@*        <div class="editor-label">
+            @Html.LabelFor(model => model.ArticleId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ArticleId)
+            @Html.ValidationMessageFor(model => model.ArticleId)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Notes)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Notes)
+            @Html.ValidationMessageFor(model => model.Notes)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ResultLink)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ResultLink)
+            @Html.ValidationMessageFor(model => model.ResultLink)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PhotoLink)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PhotoLink)
+            @Html.ValidationMessageFor(model => model.PhotoLink)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

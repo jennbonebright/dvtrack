@@ -1,0 +1,75 @@
+﻿@model IEnumerable<DVTrack.Models.Mark>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Event)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Meters)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Inches)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Grade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AthleteName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Event)
+        </td>
+        <td>
+            @(item.Time.HasValue ? item.Time.Value.ToString("mm:ss.ff") : string.Empty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Meters)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Inches)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Grade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AthleteName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MarkId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MarkId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MarkId })
+        </td>
+    </tr>
+}
+
+</table>
